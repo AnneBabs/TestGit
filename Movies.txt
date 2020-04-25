@@ -1,0 +1,58 @@
+using System;
+
+
+namespace Coding
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Movies movie1 = new Movies("Django", "Josh Whedon", 200, "PG");
+            Movies movie2 = new Movies("Robin Hood", "Daryln Steep", 245, "PG-13");
+            Movies movie3 = new Movies("Rats in the Hood", "Dann Sopp", 205, "AD");
+            //PG,G,PG-13,PG,R,NR
+            Console.WriteLine(movie3.Ratings);
+
+            //movie1.title = "Django";
+            //movie1.duration = 200;
+            //movie1.Rating = "PG";
+
+            //Console.WriteLine(movie1.title);
+
+        }
+    }
+}
+
+ class Movies
+    {
+        public string title;
+        public string producer;
+        public int duration;
+        private string ratings;
+
+        public Movies(string aTitle, string aProducer, int aDuration,  string aRatings) 
+        
+        {
+            title = aTitle;
+            producer = aProducer;
+            duration = aDuration;
+            Ratings = aRatings;
+        }
+        public string Ratings
+        {
+            get { return ratings; }
+            set {
+                if (value == "G" || value == "PG" || value == "PG-13" || value == "R" || value == "NR")
+                {
+
+                   ratings = value;
+                }
+                else 
+                {
+                    ratings = "NR";
+                }
+                
+                }
+        }
+    }
+}
