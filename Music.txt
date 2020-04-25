@@ -1,0 +1,40 @@
+ class Program
+    {
+        static void Main(string[] args)
+        {
+            Music music1 = new Music("Django", 200, "Josh Whedon");
+            Console.WriteLine(Music.songCount);
+            Music music2 = new Music("Robin Hood", 245, "Daisy");
+            Console.WriteLine(Music.songCount);
+            Music music3 = new Music("Rats in the Hood", 205, "Dampy");
+            Console.WriteLine(music3.GetSongCount());
+            
+            
+
+           
+
+        }
+    }
+}
+
+ class Music
+    {
+        public string title;
+        public int duration;
+        public string singer;
+        public static int songCount = 0;
+
+        public Music(string aTitle, int aDuration, string aSinger)
+        {
+            title = aTitle;
+            duration = aDuration;
+            singer = aSinger;
+            songCount++;
+        }
+
+        public int GetSongCount() 
+        {
+            return songCount;
+        }
+    }
+}
